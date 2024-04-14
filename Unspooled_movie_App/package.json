@@ -1,0 +1,29 @@
+{
+  "name": "unspooled-movie-app",
+  "version": "1.0.0",
+  "description": "A movie search App powered by Ai",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": " S. Wilfried Adeniyi",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "axios": "^1.6.8",
+    "body-parser": "1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongodb": "^4.11.0",
+    "node-fetch": "^3.2.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

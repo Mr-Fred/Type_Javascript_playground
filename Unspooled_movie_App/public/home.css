@@ -1,0 +1,109 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+header form {
+  display: flex;
+}
+
+header input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+header button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+}
+
+main h2 { /* Styling for category names */
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #eee;
+  color: #333; /* Adjust color for contrast */
+  border-radius: 5px;
+  text-align: center;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-card { /* Remove fixed width */
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.movie-card h3 h5 {
+  margin-top: 10px;
+}
+
+.movie-card button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #131720;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.8rem;
+}

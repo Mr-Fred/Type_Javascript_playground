@@ -1,0 +1,95 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #131720;
+  font-family: sans-serif;
+}
+
+h3,h4{
+  color: white;
+}
+
+.topnav{
+  overflow: hidden;
+  background-color: #131720;
+  padding: 10px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+form {
+  background-color: #30476d;
+  width: 300px;
+  height: 43px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  all: unset;
+  font: 15px system-ui;
+  color: #d1d1d1;
+  /* background-color: #d1d1d1; */
+  height: 100%;
+  width: 100%;
+  padding: 6px 9px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 19px;
+}
+
+.column {
+  float: none;
+  width: unset;
+  padding: 10px 10px;
+}
+
+.card {
+  border-radius: 19px;
+  padding: 15px;
+  text-align: center;
+  background-color: #151f60;
+}
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px; /* Adjust gap between elements as desired */
+}
+
+footer {
+  background-color: #131720;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.8rem;
+}
