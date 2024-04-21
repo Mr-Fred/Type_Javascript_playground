@@ -5,7 +5,7 @@ export const moviesHandler = async(req, res) => {
   const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
   try{
     const {upcoming, popular, topRated, nowPlaying} = await getMovies();
-    res.render("home.ejs", {
+    res.render("pages/home.ejs", {
       upcoming: upcoming,
       popular: popular,
       topRated: topRated,
@@ -17,15 +17,13 @@ export const moviesHandler = async(req, res) => {
   }
 }
 
-export const getMovieByIdHandler = async(req, res) => {
-  try{
-    let movieData = await fetchMovieById(req.params.id);
-    res.json(movieData);
-  } catch{
-    res.status(404).send("Movie not found");
-  }
+export const getMovieByIdHandler = async(req, res) => { 
+  const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
+  res.render("pages/movie.ejs", {
+    movie: JSON.parse(req.body.movie),
+    IMG_PATH: IMG_PATH
+  });
 }
-
 
 // export {
 //   moviesHandler,

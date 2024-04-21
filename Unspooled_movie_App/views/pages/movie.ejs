@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs'); %>
+  <body>
+    <%- include('../partials/header.ejs'); %>
+    <main>
+      <div class="movie-details">
+        <h2><%= movie.title %></h2>
+        <img src="<%= IMG_PATH + (movie.backdrop_path || movie.poster_path) %>" alt="<%= movie.title %> poster">
+        <p>Overview: <%= movie.overview %></p>
+        <p>Popularity: <%= movie.popularity %></p>
+        <p>Release Date: <%= movie.release_date %></p>
+        <p>Vote Average: <%= movie.vote_average %></p>
+      </div>
+  
+      <a href="/" class="back-button">Back to Movies</a>
+    </main>
+    <%- include('../partials/footer.ejs'); %>
+  </body>
+</html>

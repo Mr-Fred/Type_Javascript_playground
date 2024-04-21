@@ -1,8 +1,10 @@
 import express from 'express';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import reviews from './api/reviews.route.js';
 import movies from './api/movies.route.js';
-import path from 'path'; 
+import search from './api/search.route.js';
+import path from 'path';
 
 // Get current directory
 const __filename = import.meta.url;
@@ -13,6 +15,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.set('view engines', 'ejs');
 app.set('views', './views')
@@ -36,6 +40,7 @@ app.use(express.static('public')
 
 // Define routes
 app.use('/api/v1/reviews', reviews);
+app.use('/search', search)
 app.use('/', movies);
 
 // Serve the React app as the default route

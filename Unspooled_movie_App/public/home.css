@@ -17,6 +17,10 @@ header h1 {
   margin: 0;
 }
 
+header a {
+  text-transform: none;
+}
+
 header form {
   display: flex;
 }
@@ -43,7 +47,7 @@ main {
 
 main h2 { /* Styling for category names */
   font-size: 1.5em;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   padding: 10px 20px;
   background-color: #eee;
   color: #333; /* Adjust color for contrast */
@@ -54,7 +58,8 @@ main h2 { /* Styling for category names */
 .movie-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .movie-card { /* Remove fixed width */

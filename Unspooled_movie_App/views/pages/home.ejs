@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs'); %>
+
+<body>
+  <%- include('../partials/header.ejs'); %>
+  <main>
+    <h2>Upcoming</h2>
+    <div class="movie-container">
+      <% let count=0%>
+      <% for (const movie of upcoming) { %>
+        <div class="movie-card">
+          <img src="<%=IMG_PATH + (movie.backdrop_path || movie.poster_path) %>" alt="<%= movie.title %>">
+          <h3><%= movie.title %></h3>
+          <h5 style="display: inline">Release Date: <%= movie.release_date %></h5>
+          <form action="/<%= movie.title %>" method="POST" name="<% movie.title %>">
+            <button type="submit">Details</button>
+            <input type="hidden" name="movie" value="<%= JSON.stringify(movie) %>"> 
+          </form>
+        </div>
+          <% count++%>
+          <% if(count >= 12){break}%>
+      <% } %>
+    </div>
+
+    <h2>Top Rated</h2>
+    <div class="movie-container" >
+      <% for (const movie of topRated) { %>
+        <div class="movie-card">
+          <img src="<%= IMG_PATH + (movie.backdrop_path || movie.poster_path) %>" alt="<%= movie.title %>">
+          <h3><%= movie.title %></h3>
+          <h5 style="display: block"><b>Release Date: </b><%= movie.release_date %></h5>
+          <form action="/<%= movie.title %>" method="POST" name="<% movie.title %>">
+            <button type="submit">Details</button>
+            <input type="hidden" name="movie" value="<%= JSON.stringify(movie) %>"> 
+          </form>
+        </div>
+      <% } %>
+    </div>
+
+    <h2>Popular</h2>
+    <div class="movie-container">
+      <% for (const movie of popular) { %>
+        <div class="movie-card">
+          <img src="<%= IMG_PATH + (movie.backdrop_path || movie.poster_path) %>" alt="<%= movie.title %>">
+          <h3><%= movie.title %></h3>
+          <h5 style="display: block"><b>Release Date: </b> <%= movie.release_date %></h5>
+          <form action="/<%= movie.title %>" method="POST" name="<% movie.title %>">
+            <button type="submit">Details</button>
+            <input type="hidden" name="movie" value="<%= JSON.stringify(movie) %>"> 
+          </form>
+        </div>
+      <% } %>
+    </div>
+
+    <h2>Now Playing</h2>
+    <div class="movie-container">
+      <% for (const movie of nowPlaying) { %>
+        <div class="movie-card">
+          <img src="<%= IMG_PATH + (movie.backdrop_path || movie.poster_path) %>" alt="<%= movie.title %> ">
+          <h3><%= movie.title %></h3>
+          <h5 style="display: block"><b>Release Date: </b> <%= movie.release_date %></h5>
+          <form action="/<%= movie.title %>" method="POST" name="<% movie.title %>">
+            <button type="submit">Details</button>
+            <input type="hidden" name="movie" value="<%= JSON.stringify(movie) %>"> 
+          </form>
+        </div>
+      <% } %>
+    </div>
+  </main>
+  <%- include('../partials/footer.ejs'); %>
+</body>
+</html>

@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.route('/').get(moviesHandler)
 
-router.route('/:id').get(getMovieByIdHandler)
+router.route('/:title').post(getMovieByIdHandler)
 
 export default router;
