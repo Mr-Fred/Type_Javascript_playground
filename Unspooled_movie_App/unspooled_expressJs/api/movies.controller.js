@@ -1,4 +1,4 @@
-import {fetchMovieById, getMovies} from "./lib/movies.js";
+import {getMovies} from "./lib/movies.js";
 
 
 export const moviesHandler = async(req, res) => {
