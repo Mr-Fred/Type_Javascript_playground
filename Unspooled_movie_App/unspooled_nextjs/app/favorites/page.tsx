@@ -1,17 +1,9 @@
-import React from "react";
+import React from 'react'
 
-type Props = {}
-
-
-export default function FavoritePage({}: Props) {
-
+function FavoritePage() {
   return (
-
-    <>
-      <div>
-        <h1 className="text-2xl font-bold">Favorite Movies</h1>
-      </div>
-    </>
-
+    <div>Favorite</div>
   )
 }
+
+export default FavoritePage

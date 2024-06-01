@@ -3,39 +3,17 @@ import React from 'react'
 
 type Props = {}
 
-export default function Navbar({}: Props) {
-  interface NavItems {
-    name: string,
-    href: string
-  }
-  const navItemsList: NavItems[] = [
-    {
-      name: "Home",
-      href: "/"
-    },
-    {
-      name: "Favs",
-      href: "/favorites"
-    },
-    {
-      name: "About",
-      href: "/about"
-    },
-    {
-      name: "Login",
-      href: "/auths/login"
-    },
-    {
-      name: "Sign Up",
-      href: "/auths/signUp"
-    }
-  ]
-  const navItemsStyle ="text-orange-700 font-semibold hover:text-blue-700"
+function Navbar({}: Props) {
   return (
-    <div className='flex justify-center space-x-10'>
-      {navItemsList.map((item, index) => (
-        <Link key={index} href={item.href} className={navItemsStyle}>{item.name}</Link>
-      ))}
+    <div className='flex max-w-7xl mx-auto w-full justify-between items-center py-4 px-2 border-2 bg-background text-foreground' >
+      <div className='font-bold'>Unspooled</div>
+      <div className='flex gap-3'>
+        <Link href={'/'}>Home</Link>
+        <Link href={'/favorites'}>My Fovorites</Link>
+      </div>
     </div>
+
   )
 }
+
+export default Navbar
