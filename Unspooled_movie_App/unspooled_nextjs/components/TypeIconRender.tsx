@@ -9,7 +9,7 @@ export type iconRenderProps = {
 export function TypeIconRender({type}: iconRenderProps) {
   return (
     <div>
-      {type === "movie" ? <Film /> :<Tv />}
+      {type === "movie" ? <div className="type-icon flex "><Film /><p>Movie</p></div> :<><Tv /><p>TV Series</p></>}
     </div>
   )
 }

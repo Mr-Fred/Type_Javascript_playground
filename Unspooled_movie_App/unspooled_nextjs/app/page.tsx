@@ -1,20 +1,29 @@
 import Navbar from '@/components/Navbar'
 import SearchBar from '@/components/SearchBar'
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import {ModeToggle} from '@/components/ModeToggle'
-import DemoMediaCard from '@/components/mCard'
+import MediaList from '@/components/MediaList'
+import {type TmdbMovie,fetchMovies, formatMovie} from '@/app/_actions/fetchMoviesActions'
+import {fetchMovieByTitle} from '@/app/_actions/searchActions'
 
+import {type CardProps} from '@/components/MediaCard'
 
-function HomePage() {
+async function HomePage() {
+  const movies: TmdbMovie[] = await fetchMovies()
+  let cardData: CardProps[] = movies.map(formatMovie)
+  async function searchHandler(e: ChangeEvent){
+    e.preventDefault()
+    // const response = await fetchMovieByTitle(e.target.value: String)
+
+  }
   return (
     <div>
       <Navbar />
       <div className='max-w-7xl px-2 mx-auto flex justify-end items-center '>
-        <SearchBar/>
+        <SearchBar />
         <ModeToggle />
       </div>
-      {/* Card component with Image, Title, Description, Button, badge, etc. */}
-      <DemoMediaCard />
+      <MediaList cardData={cardData}/>
     </div>
   )
 }
